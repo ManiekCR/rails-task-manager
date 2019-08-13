@@ -1,9 +1,10 @@
-<h1><%= @task.title %></h1>
-<%= link_to "Edit this task", edit_task_path %>
-<p><%= @task.details %></p>
-<p><% if @task.completed %>
-  <%= check_box_tag 'done', value = @task.completed, @task.completed %> This task is completed.
-<% else %>
-  <%= check_box_tag 'done', value = @task.completed, @task.completed %> This task is not completed.
-<% end %></p>
-<%= link_to "Back to list", tasks_path %>
+<div class="p-4">
+  <div class="d-flex justify-content-between"><h1><%= @task.title %></h1>
+    <div class="btn btn-outline-primary"><%= link_to "Edit this task", edit_task_path, class: 'btn' %></div></div>
+  <p id="details" class="rounded border border-light p-3 bg-light"><%= @task.details %></p>
+  <p><% if @task.completed %>
+    <%= check_box_tag 'done', value = @task.completed, @task.completed %> This task is completed.
+  <% else %>
+    <%= check_box_tag 'done', value = @task.completed, @task.completed %> This task is not completed.
+  <% end %></p>
+  <p class="border-top pt-2"><%= link_to "Back to list", tasks_path %></p></div>
